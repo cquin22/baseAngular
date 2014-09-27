@@ -1,0 +1,26 @@
+{
+  "name": "baseAngular",
+  "version": "0.0.1",
+  "homepage": "https://github.com/cquin22/baseAngular",
+  "description": "Base de Archivos frontend para angular JS",
+  "keywords": [
+    "Angular",
+    "UI",
+    "boostrap"
+  ],
+  "authors": [
+    "Cristian Quintero <cristianqr22@gmail.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "app/lib",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "1.2.10"
+  }
+}

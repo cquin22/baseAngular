@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Base Angular JS</title>
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- bower:css -->
+	<!-- endbower -->
+	<!-- inject:css -->
+	<link rel="stylesheet" href="/css/bootstrap.css">
+	<!-- endinject -->
+	<!--[if lt IE 8]>
+		<p class="browsehappy">Estás usando un navegador <strong>desactualizado</strong>.Por favor <a  href="http://browsehappy.com/">actualiza tu navegador</a> Para mejorar la experiencia..</p>
+	<![endif]-->
+	
+</head>
+<body>
+	<h1>base Angular en vivo oooooJS</h1>
+	<div ng-controller="AlertDemoCtrl">
+	  <alert ng-repeat="alert in alerts" type="{{alert.type}}" close="closeAlert($index)">{{alert.msg}}</alert>
+	  <button class='btn btn-default' ng-click="addAlert()">Add Alert</button>
+	</div>
+
+	<!-- bower:js -->
+	<script src="lib/angular/angular.js"></script>
+	<!-- endbower -->
+	<script src="http://angular-ui.github.io/bootstrap/ui-bootstrap-tpls-0.11.0.js"></script>
+	<!-- inject:js -->
+	<script src="/js/app.js"></script>
+	<script src="/js/controllers.js"></script>
+	<!-- endinject -->
+	
+	
+
+
+</body>
+</html>
