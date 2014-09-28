@@ -1,23 +1,26 @@
 (function () {
-
+  'use strict';
   var app = angular.module('myApp', [
-    //'ngRoute',
+    'ngRoute',
     'ui.bootstrap',
     'myApp.controllers',
+    'myApp.services',
 
   ]);
-/*
-  app.config(['$routeProvider', function ($routeProvider) {
 
+  app.config(['$locationProvider', '$routeProvider', function ($locationProvider, $routeProvider) {
+    $locationProvider.html5Mode(true);
     $routeProvider
-      .when('/', {
-        templateUrl: 'views/pokedex.html',
-        controller: 'PokedexController'
+      .when('/new', {
+        templateUrl: 'views/tmp.html',
+        controller: 'AlertDemoCtrl'
       })
       .otherwise({
         redirectTo: '/'
       });
 
+
+
   }]);
-*/
+
 })();

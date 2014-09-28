@@ -1,0 +1,12 @@
+{{titulo}}
+<div>
+	<select ng-model="regionCode" ng-change="loadCountries()">
+		<option value="Europa">Europa</option>
+		<option value="America">America</option>
+		<option value="Asia">Asia</option>
+		<option value="Africa">Africa</option>
+	</select>
+</div>
+<div ng-repeat="country in data ">
+	<p>{{country.name | lowercase}}</p>
+</div>

@@ -9,8 +9,7 @@ var inject = require('gulp-inject');
 var wiredep = require('wiredep').stream;
 
 
-// Busca en las carpetas de estilos y javascript los archivos que hayamos creado
-// para inyectarlos en el index.html
+// Search folders styles and javascript files we created to inject the index.html
 gulp.task('inject', function() {
 	var sources = gulp.src(['./app/js/**/*.js','./app/css/**/*.css']);
 	return gulp.src('index.html', {cwd: './app'})
@@ -22,7 +21,7 @@ gulp.task('inject', function() {
 });
 
 
-// Inyecta las librerias que instalemos vía Bower
+// Inject the libraries installed via Bower
 gulp.task('wiredep', function () {
 	gulp.src('./app/index.html')
 	.pipe(wiredep({
@@ -32,7 +31,7 @@ gulp.task('wiredep', function () {
 });
 
 
-// Servidor web de desarrollo
+// Web development server
 gulp.task('server', function() {
 	connect.server({
 		root: './app',
@@ -46,7 +45,7 @@ gulp.task('server', function() {
 })
 
 
-// Busca errores en el JS y nos los muestra por pantalla
+// Find errors in JS and prints them
 gulp.task('jshint', function() { 
 	return gulp.src('./app/js/*.js')
 	.pipe(jshint('.jshintrc')) .pipe(jshint.reporter('jshint-stylish'))
@@ -55,7 +54,7 @@ gulp.task('jshint', function() {
 
 
 
-// Preprocesa archivos Less a CSS y recarga los cambios
+// Less CSS files to preprocess and recharge changes
 gulp.task('less', function () {
   gulp.src('./app/less/bootstrap.less')
     .pipe(less({
@@ -70,14 +69,13 @@ gulp.task('less', function () {
 });
 
 
-// Recarga el navegador cuando hay cambios en el HTML
+// Reload the browser when there are changes in the HTML
 gulp.task('html', function() {
 	gulp.src('./app/**/*.html')
 	.pipe(connect.reload());
 });
 
-// Vigila cambios que se produzcan en el código
-// y lanza las tareas relacionadas
+// Watch changes produced in the code and launch tasks related
 gulp.task('watch', function() {
 	gulp.watch(['./app/**/*.html'], ['html']);
 	gulp.watch(['./app/less/*.less'], ['less']);
